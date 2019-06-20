@@ -1,0 +1,49 @@
+{
+    "appname": "bootstrap",
+    "appdir": "{{{appdir}}}",
+
+    "dbUrl": "sqlite://{{{appdir}}}/work/bootstrap.db",
+
+    "tablePageSize": 8,
+
+    "sortArrow": {
+        "asc": "&uarr;",
+        "desc": "&darr;"
+    },
+
+    "leftMenu": {
+        "urlPrefix": "/bootstrap/server/views/",
+        "items": [{
+            "id": "description",
+            "text": "Description"
+        }, {
+            "id": "addUser",
+            "text": "Add User"
+        }, {
+            "id": "usersList",
+            "text": "Users List"
+        }, {
+            "id": "aboutWilton",
+            "text": "About Wilton"
+        }]
+    },
+
+    "logging": {
+        "appenders": [{
+            "appenderType": "CONSOLE",
+            "thresholdLevel": "DEBUG"
+        }],
+        "loggers": {
+            "staticlib": "WARN",
+            "wilton": "INFO",
+            "wilton.DBConnection": "INFO",
+            "bootstrap": "DEBUG"
+        }
+    },
+
+    "launcher": {
+        "tcpPort": 8080,
+        "rootModuleName": "bootstrap",
+        "startupModule": "bootstrap/index"
+    }
+}
